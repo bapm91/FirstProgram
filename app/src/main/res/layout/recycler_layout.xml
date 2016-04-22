@@ -22,8 +22,7 @@
             <ImageView
                 android:id="@+id/imageIconView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_settings" />
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"

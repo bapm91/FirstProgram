@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 
 import com.example.user.firstprogram.R;
 
-public class ExampleFragment extends Fragment {
-    private static final int LAYOUT = R.layout.fragment_layout;
+public class RecyclerFragment extends Fragment {
+    private static final int LayoutThis = R.layout.fragment_layout;
 
     private View mView;
 
-    public static ExampleFragment getInstance() {
+    public static RecyclerFragment getInstance() {
         Bundle args = new Bundle();
-        ExampleFragment fragment = new ExampleFragment();
+        RecyclerFragment fragment = new RecyclerFragment();
         fragment.setArguments(args);
 
         return fragment;
@@ -25,7 +25,7 @@ public class ExampleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(LAYOUT, container, false);
+        mView = inflater.inflate(LayoutThis, container, false);
 
 
         return mView;
