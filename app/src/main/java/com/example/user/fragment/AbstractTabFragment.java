@@ -1,6 +1,5 @@
 package com.example.user.fragment;
 
-
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.view.View;
