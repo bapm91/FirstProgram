@@ -1,0 +1,28 @@
+<resources>
+    <string-array name="image_urls">
+        <item >https://lh6.googleusercontent.com/-8HO-4vIFnlw/URquZnsFgtI/AAAAAAAAAbs/WT8jViTF7vw/s1024/Antelope252520Hallway.jpg</item>
+        <item>https://lh5.googleusercontent.com/-0BDXkYmckbo/URquhKFW84I/AAAAAAAAAbs/ogQtHCTk2JQ/s1024/Closed252520Door.jpg</item>
+        <item>https://lh3.googleusercontent.com/-PyggXXZRykM/URquh-kVvoI/AAAAAAAAAbs/hFtDwhtrHHQ/s1024/Colorado252520River252520Sunset.jpg</item>
+        <item>https://lh4.googleusercontent.com/-e9NHZ5k5MSs/URqvMIBZjtI/AAAAAAAAAbs/1fV810rDNfQ/s1024/Yosemite252520Tree.jpg</item>
+        <item >http://am.cdnmob.org/pic/v2/gallery/111x185/hty-more-pejzazh-36151.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/osen-pejzazh-risunki-36152.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/derevya-pejzazh-36142.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/gory-ozera-pejzazh-36133.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/dorogi-nebo-pejzazh-36126.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/fentezi-kosmos-pejzazh-36125.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/hty-more-pejzazh-zakat-36124.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/more-pejzazh-volny-36121.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/goroda-gory-pejzazh-36120.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/fentezi-pejzazh-36118.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/gory-pejzazh-36113.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/nebo-oblaka-pejzazh-36112.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/pejzazh-raduga-vodopady-36099.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/goroda-pejzazh-reka-36098.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/goroda-pejzazh-36094.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/goroda-pejzazh-36089.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/pejzazh-plyazh-36087.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/doma-pejzazh-polya-36078.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/gory-ozera-pejzazh-36074.jpg</item>
+        <item>http://am.cdnmob.org/pic/v2/gallery/111x185/pejzazh-plyazh-36073.jpg</item>
+    </string-array>
+</resources>

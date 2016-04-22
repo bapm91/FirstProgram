@@ -3,6 +3,23 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="one_page_activity">Courses</string>
+    <string name="header">Only nature</string>
+    <string name="status">In working</string>
+<string name="text">
+Planting 21 trees and 32 bush!
+    Nature, in the broadest sense, is the natural, physical, or material world or universe. "Nature" can refer to the phenomena of the phisical world, and also to life in general.
+</string>
+    <string name="toolbarText">CE-1257218</string>
+    <string name="create">Created</string>
+    <string name="registered">Registered</string>
+    <string name="deadline">Resolve to</string>
+    <string name="responsible">Responsible</string>
+    <string name="responsible_name">Kulynych</string>
+    <string name="created_date">15 march 2016</string>
+    <string name="registered_date">16 march 2016</string>
+    <string name="deadline_date">25 march 2016</string>
+    <color name="background">#e6e6e6</color>
 
     <string name="action_settings">Settings</string>
 </resources>

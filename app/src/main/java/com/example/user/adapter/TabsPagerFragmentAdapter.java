@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.user.fragment.RecyclerFragment;
 
 public class TabsPagerFragmentAdapter extends FragmentPagerAdapter{
-
     private String[] tabs;
 
     public TabsPagerFragmentAdapter(FragmentManager fragmentManager) {
@@ -29,15 +28,11 @@ public class TabsPagerFragmentAdapter extends FragmentPagerAdapter{
         switch (position){
             case 0:
                 return RecyclerFragment.getInstance();
-
             case 1:
                 return RecyclerFragment.getInstance();
-
             case 2:
                 return RecyclerFragment.getInstance();
         }
-
-
         return null;
     }
 
