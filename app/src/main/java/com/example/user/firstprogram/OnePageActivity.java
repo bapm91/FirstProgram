@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.user.adapter.AdapterOnePageRecyclerView;
+import com.example.user.adapter.OnePageRecyclerViewAdapter;
 
 import java.util.Arrays;
 
@@ -59,7 +59,7 @@ public class OnePageActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-        AdapterOnePageRecyclerView Adapter = new AdapterOnePageRecyclerView(Arrays.asList(getResources().getStringArray(R.array.image_urls)), this);
+        OnePageRecyclerViewAdapter Adapter = new OnePageRecyclerViewAdapter(Arrays.asList(getResources().getStringArray(R.array.image_urls)), this);
         recyclerView.setAdapter(Adapter);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());

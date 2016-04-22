@@ -15,13 +15,13 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class AdapterOnePageRecyclerView extends RecyclerView.Adapter<AdapterOnePageRecyclerView.ViewHolder> {
+public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecyclerViewAdapter.ViewHolder> {
     private List<String> mItemsData;
     private Context mContext;
     private Picasso mPicasso;
     private static final int IMAGE_SIZE = 479;
 
-    public AdapterOnePageRecyclerView(List<String> mItemsData, Context context) {
+    public OnePageRecyclerViewAdapter(List<String> mItemsData, Context context) {
         this.mItemsData = mItemsData;
         mContext = context;
         mPicasso = new Picasso.Builder(context)
@@ -36,7 +36,7 @@ public class AdapterOnePageRecyclerView extends RecyclerView.Adapter<AdapterOneP
     }
 
     @Override
-    public AdapterOnePageRecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public OnePageRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemLayoutView = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.one_page_recycler_item, parent, false);
@@ -53,7 +53,7 @@ public class AdapterOnePageRecyclerView extends RecyclerView.Adapter<AdapterOneP
     }
 
     @Override
-    public void onBindViewHolder(AdapterOnePageRecyclerView.ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(OnePageRecyclerViewAdapter.ViewHolder viewHolder, final int position) {
 
         mPicasso.load(mItemsData.get(position))
                 .noFade()

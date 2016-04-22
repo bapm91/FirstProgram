@@ -1,8 +1,8 @@
 package com.example.user.adapter;
 
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +13,15 @@ import com.example.user.firstprogram.R;
 
 import java.util.List;
 
-public class AdapterRecyclerTab extends RecyclerView.Adapter<AdapterRecyclerTab.ViewHolder> {
+public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.ViewHolder> {
     private List<String> mDataset;
 
-    public AdapterRecyclerTab(List<String> mDataset){
+    public RecyclerTabAdapter(List<String> mDataset){
         this.mDataset = mDataset;
     }
 
     @Override
-    public AdapterRecyclerTab.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerTabAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycler_layout_demo, parent, false);
 
@@ -38,11 +38,12 @@ public class AdapterRecyclerTab extends RecyclerView.Adapter<AdapterRecyclerTab.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        CardView cardView;
         public TextView mTextView;
         public ViewHolder(View itemView) {
             super(itemView);
-            mTextView = (TextView) itemView.findViewById(R.id.text_recyclerview);
-            Log.w("Kulynych" , "viewHolder");
+            cardView = (CardView) itemView.findViewById(R.id.card_view);
+            mTextView = (TextView) itemView.findViewById(R.id.title);
         }
     }
 
@@ -50,7 +51,6 @@ public class AdapterRecyclerTab extends RecyclerView.Adapter<AdapterRecyclerTab.
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.mTextView.setText(mDataset.get(position));
         holder.mTextView.setTag(position);
-        Log.w("Kulynych", String.format("onBind %d", position));
     }
 
     @Override

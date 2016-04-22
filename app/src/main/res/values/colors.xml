@@ -6,6 +6,7 @@
     <color name="orange">#FF9800</color>
     <color name="orange2">#2bff00</color>
     <color name="viewBackground">#d2d2d2</color>
+    <color name="cardText">#a4a4a4</color>
     <color name="white">#ebebeb</color>
     <color name="tabs">#cdd7e6</color>
 </resources>

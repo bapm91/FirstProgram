@@ -2,27 +2,20 @@ package com.example.user.firstprogram;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.example.user.adapter.AdapterRecyclerTab;
-import com.example.user.adapter.TabsPagerFragmentAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.example.user.adapter.TabsFragmentAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,10 +25,6 @@ public class MainActivity extends AppCompatActivity
     private Toolbar mToolbar;
     private DrawerLayout mDrawer;
     private ViewPager mViewPager;
-    private RecyclerView mRecyclerTab;
-    private RecyclerView.LayoutManager mLayoutManagerRecyclerTab;
-    private RecyclerView.Adapter mAdapterRecyclerTab;
-    private List<String> mDataset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,30 +52,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        setupRecyclerView();
-    }
-
-    public void setupRecyclerView() {
-        mDataset = new ArrayList<String>();
-        mDataset.add("1lk");
-        mDataset.add("2vgre");
-        mDataset.add("3csa");
-
-        mRecyclerTab = (RecyclerView) findViewById(R.id.recycler_tab_view);
-        mRecyclerTab.setHasFixedSize(true);
-
-        mAdapterRecyclerTab = new AdapterRecyclerTab(mDataset);
-        mRecyclerTab.setAdapter(mAdapterRecyclerTab);
-        Log.w("Kulynych", "Adapter");
-
-        mLayoutManagerRecyclerTab = new LinearLayoutManager(this);
-        mRecyclerTab.setLayoutManager(mLayoutManagerRecyclerTab);
     }
 
     private void initTabs() {
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
-        TabsPagerFragmentAdapter adapter = new TabsPagerFragmentAdapter(getSupportFragmentManager());
+        TabsFragmentAdapter adapter = new TabsFragmentAdapter(this, getSupportFragmentManager());
         mViewPager.setAdapter(adapter);
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
         mTabLayout.setupWithViewPager(mViewPager);
