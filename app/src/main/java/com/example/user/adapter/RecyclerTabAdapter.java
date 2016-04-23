@@ -26,7 +26,7 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
                 .inflate(R.layout.recycler_layout_demo, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
-        viewHolder.mTextView.setOnClickListener(new View.OnClickListener() {
+        viewHolder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), OnePageActivity.class);
@@ -38,11 +38,11 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        CardView cardView;
-        public TextView mTextView;
+        CardView mCardView;
+        TextView mTextView;
         public ViewHolder(View itemView) {
             super(itemView);
-            cardView = (CardView) itemView.findViewById(R.id.card_view);
+            mCardView = (CardView) itemView.findViewById(R.id.card_view);
             mTextView = (TextView) itemView.findViewById(R.id.title);
         }
     }
@@ -50,7 +50,7 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.mTextView.setText(mDataset.get(position));
-        holder.mTextView.setTag(position);
+        holder.mCardView.setTag(position);
     }
 
     @Override
