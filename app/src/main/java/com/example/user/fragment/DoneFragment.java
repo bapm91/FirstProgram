@@ -31,16 +31,11 @@ public class DoneFragment extends AbstractTabFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(LayoutThis, container, false);
-        List<String> mDataset =  new ArrayList<>();
-        mDataset.add("Демонтаж інших об'єктів, що входять до переліку мал...");
-        mDataset.add("Питання стосовно нарахування боргу електрое...");
-        mDataset.add("Ремонт та обслуговування ліфтів");
-        mDataset.add("Прибирання та санітарний стан території");
-        mDataset.add("Item 5");
-        mDataset.add("Item 6");
-        mDataset.add("Item 7");
-        mDataset.add("Item 8");
-        mDataset.add("Item 9");
+        List<CardsModel> mDataset =  new ArrayList<>();
+        mDataset.add(new CardsModel("Демонтаж інших об'єктів, що входять до переліку мал...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_warning_black_24dp));
+        mDataset.add(new CardsModel("Питання стосовно нарахування боргу електрое...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trending_up_black_24dp));
+        mDataset.add(new CardsModel("Ремонт та обслуговування ліфтів", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trash));
+        mDataset.add(new CardsModel("Прибирання та санітарний стан території", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_timeline_black_24dp));
 
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_done);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));

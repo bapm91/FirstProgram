@@ -1,54 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginTop="16dp"
-    android:background="@android:color/white"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="136dp"
+        android:clickable="true"
+        android:id="@+id/card_view"
+        card:cardElevation="2dp"
+        card:cardUseCompatPadding="true"
+        card:cardBackgroundColor="@color/cardBackground"
+        card:cardCornerRadius="7dp"
+        >
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <View
+                android:id="@+id/line_view"
+                android:background="@color/blak"
+                android:layout_width="1dp"
+                android:layout_marginLeft="80dp"
+                android:layout_height="126dp">
+
+            </View>
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="97dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="97dp"
+                android:textSize="16sp"
+                android:textColor="@color/blak"
+                android:textStyle="normal"
+                android:fontFamily="sans-serif-medium"
+                android:id="@+id/title"/>
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="16dp"
+                android:id="@+id/card_street"
+                android:textSize="14sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="97dp"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="normal"
+                android:layout_below="@+id/title"
+                android:textColor="@color/blak_54"/>
+
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="97dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:id="@+id/card_date"
+                android:textColor="@color/blak_54"
+                android:layout_below="@+id/card_street"/>
+
+            <TextView
+                android:layout_width="54dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="266dp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/blak_54"
+                android:id="@+id/card_days"
+                android:layout_below="@+id/card_street"/>
+
+            <TextView
+                android:layout_width="17dp"
+                android:layout_height="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="46dp"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/blak_23"
+                android:id="@+id/card_likes"
+                android:layout_below="@+id/card_street"/>
 
             <ImageView
-                android:id="@+id/imageIconView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="21dp"
+                android:id="@+id/card_icon"
+                android:src="@mipmap/ic_settings_black_24dp"
+                android:layout_marginStart="19dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="18dp"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imageIconView">
+                android:layout_marginLeft="16dp"
+                android:src="@mipmap/ic_thumb_up_black_24dp"
+                android:layout_below="@+id/card_street"
+                android:id="@+id/card_image_like"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"/>
 
-                <ImageView
-                    android:id="@+id/imageLikeView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_thumb_up_black" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/textLikeView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="right|center_horizontal"
-                    android:layout_toRightOf="@+id/imageLikeView"
-                    android:text="0" />
+    </android.support.v7.widget.CardView>
 
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-    </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

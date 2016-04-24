@@ -31,16 +31,12 @@ public class InWorkingFragment extends AbstractTabFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(LayoutThis, container, false);
-        List<String> mDataset =  new ArrayList<>();
-        mDataset.add("Комунальне господарство");
-        mDataset.add("Благоустрій та будівництво");
-        mDataset.add("1Благоустрій та будівництво");
-        mDataset.add("2Благоустрій та будівництво");
-        mDataset.add("3Благоустрій та будівництво");
-        mDataset.add("4Благоустрій та будівництво");
-        mDataset.add("5Благоустрій та будівництво");
-        mDataset.add("6Благоустрій та будівництво");
-        mDataset.add("7Благоустрій та будівництво");
+        List<CardsModel> mDataset =  new ArrayList<>();
+        mDataset.add(new CardsModel("Комунальне господарство", "вул.Б.Кротова,22,Дніпропетровськ", "13.12.12", "7 днів", "1", R.mipmap.ic_flight_takeoff_black_24dp));
+        mDataset.add(new CardsModel("Благоустрій та будівництво", "Дніпропетровськ,вулиця Олеся Гончара", "25.06.13", "6 днів", "3", R.mipmap.ic_shopping_cart_black_24dp));
+        mDataset.add(new CardsModel("1Благоустрій та будівництво", "Дніпропетровськ,проспект Богдана Хмельницького", "19.09.91", "6 днів", "3", R.mipmap.ic_swap_horiz_black_24dp));
+        mDataset.add(new CardsModel("2Благоустрій та будівництво", "Дніпропетровськ,проспект Карла Маркса", "13.12.12", "5 днів", "6", R.mipmap.ic_timeline_black_24dp));
+        mDataset.add(new CardsModel("3Благоустрій та будівництво", "Дніпропетровськ,узвіз Крутогірний", "13.12.12", "5 днів", "2", R.mipmap.ic_warning_black_24dp));
 
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_tab_in_working);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
