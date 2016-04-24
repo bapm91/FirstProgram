@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#567dac</color>
+    <color name="colorPrimary">#557cac</color>
     <color name="colorPrimaryDark">#45648a</color>
     <color name="colorAccent">#ea4e00</color>
     <color name="orange">#FF9800</color>
     <color name="orange2">#2bff00</color>
     <color name="viewBackground">#d2d2d2</color>
-    <color name="cardText">#a4a4a4</color>
+    <color name="cardBackground">#f9f9f9</color>
+    <color name="blak">#000000</color>
+    <color name="blak_87">#de000000</color>
     <color name="white">#ebebeb</color>
     <color name="tabs">#cdd7e6</color>
+    <color name="side_nav_bar">#557cac</color>
 </resources>

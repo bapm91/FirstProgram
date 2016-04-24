@@ -32,15 +32,15 @@ public class DoneFragment extends AbstractTabFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(LayoutThis, container, false);
         List<String> mDataset =  new ArrayList<>();
-        mDataset.add(new String("Item 10"));
-        mDataset.add(new String("Item 20"));
-        mDataset.add(new String("Item 30"));
-        mDataset.add(new String("Item 40"));
-        mDataset.add(new String("Item 50"));
-        mDataset.add(new String("Item 60"));
-        mDataset.add(new String("Item 70"));
-        mDataset.add(new String("Item 80"));
-        mDataset.add(new String("Item 90"));
+        mDataset.add("Демонтаж інших об'єктів, що входять до переліку мал...");
+        mDataset.add("Питання стосовно нарахування боргу електрое...");
+        mDataset.add("Ремонт та обслуговування ліфтів");
+        mDataset.add("Прибирання та санітарний стан території");
+        mDataset.add("Item 5");
+        mDataset.add("Item 6");
+        mDataset.add("Item 7");
+        mDataset.add("Item 8");
+        mDataset.add("Item 9");
 
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_done);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));

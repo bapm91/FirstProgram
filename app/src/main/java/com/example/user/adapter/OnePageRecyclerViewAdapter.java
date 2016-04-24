@@ -40,8 +40,7 @@ public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecy
         View itemLayoutView = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.one_page_recycler_item, parent, false);
-        ViewHolder viewHolder = new ViewHolder(itemLayoutView);
-        return viewHolder;
+        return new ViewHolder(itemLayoutView);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

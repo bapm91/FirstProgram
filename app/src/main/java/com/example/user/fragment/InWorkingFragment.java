@@ -32,15 +32,15 @@ public class InWorkingFragment extends AbstractTabFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(LayoutThis, container, false);
         List<String> mDataset =  new ArrayList<>();
-        mDataset.add(new String("Item 1"));
-        mDataset.add(new String("Item 2"));
-        mDataset.add(new String("Item 3"));
-        mDataset.add(new String("Item 4"));
-        mDataset.add(new String("Item 5"));
-        mDataset.add(new String("Item 6"));
-        mDataset.add(new String("Item 7"));
-        mDataset.add(new String("Item 8"));
-        mDataset.add(new String("Item 9"));
+        mDataset.add("Комунальне господарство");
+        mDataset.add("Благоустрій та будівництво");
+        mDataset.add("1Благоустрій та будівництво");
+        mDataset.add("2Благоустрій та будівництво");
+        mDataset.add("3Благоустрій та будівництво");
+        mDataset.add("4Благоустрій та будівництво");
+        mDataset.add("5Благоустрій та будівництво");
+        mDataset.add("6Благоустрій та будівництво");
+        mDataset.add("7Благоустрій та будівництво");
 
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_tab_in_working);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));

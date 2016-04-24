@@ -19,9 +19,6 @@ import com.example.user.adapter.TabsFragmentAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private static int LAYOUT = R.layout.activity_main;
-
     private Toolbar mToolbar;
     private DrawerLayout mDrawer;
     private ViewPager mViewPager;
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
-        setContentView(LAYOUT);
+        setContentView(R.layout.activity_main);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         initTabs();
