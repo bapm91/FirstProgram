@@ -1,5 +1,7 @@
 package com.example.user.adapter;
 
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.user.firstprogram.OnePageActivity;
 import com.example.user.firstprogram.R;
 import com.example.user.fragment.AbstractTabFragment;
 
@@ -35,7 +38,7 @@ public class ListViewAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if (view == null){
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout,parent, false);
@@ -50,7 +53,16 @@ public class ListViewAdapter extends BaseAdapter{
         ((TextView) view.findViewById(R.id.card_likes)).setText(cardsModel.likes);
         ((ImageView) view.findViewById(R.id.card_icon)).setImageResource(cardsModel.cardIcon);
 
-        //CardView cardView = (CardView) view.findViewById(R.id.card_view);
+        CardView cardView = (CardView) view.findViewById(R.id.card_view);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), OnePageActivity.class);
+                intent.putExtra("position",position);
+                view.getContext().startActivity(intent);
+            }
+        });
 
 
         return view;
