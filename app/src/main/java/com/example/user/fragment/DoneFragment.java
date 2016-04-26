@@ -22,7 +22,6 @@ public class DoneFragment extends AbstractTabFragment {
         Bundle args = new Bundle();
         DoneFragment fragment = new DoneFragment();
         fragment.setArguments(args);
-        fragment.setContext(context);
         fragment.setTitle(context.getString(R.string.tab_done));
         return fragment;
     }
@@ -38,12 +37,8 @@ public class DoneFragment extends AbstractTabFragment {
         mDataset.add(new CardsModel("Прибирання та санітарний стан території", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_timeline_black_24dp));
 
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_done);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(mDataset));
         return mView;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 }

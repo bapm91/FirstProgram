@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#557cac</color>
+    <color name="colorPrimary">#4a76a4</color>
+    <color name="dusty_blue">#6082b4</color>
+    <color name="greeny_blue">#45b3c3</color>
+    <color name="faded_blue">#6786b9</color>
     <color name="colorPrimaryDark">#45648a</color>
     <color name="colorAccent">#ea4e00</color>
     <color name="orange">#FF9800</color>

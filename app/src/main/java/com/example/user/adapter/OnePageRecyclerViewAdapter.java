@@ -55,9 +55,9 @@ public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecy
     public void onBindViewHolder(OnePageRecyclerViewAdapter.ViewHolder viewHolder, final int position) {
 
         mPicasso.load(mItemsData.get(position))
-                .noFade()
                 .resize(IMAGE_SIZE, IMAGE_SIZE)
                 .centerCrop()
+                .skipMemoryCache()
                 .into(viewHolder.imgViewIcon);
         viewHolder.imgViewIcon.setTag(position);
         viewHolder.imgViewIcon.setOnClickListener(new View.OnClickListener() {
@@ -72,5 +72,4 @@ public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecy
     public int getItemCount() {
         return mItemsData.size();
     }
-
 }

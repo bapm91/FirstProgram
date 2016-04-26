@@ -22,7 +22,6 @@ public class InWorkingFragment extends AbstractTabFragment {
         Bundle args = new Bundle();
         InWorkingFragment fragment = new InWorkingFragment();
         fragment.setArguments(args);
-        fragment.setContext(context);
         fragment.setTitle(context.getString(R.string.tab_in_working));
         return fragment;
     }
@@ -34,17 +33,13 @@ public class InWorkingFragment extends AbstractTabFragment {
         List<CardsModel> mDataset =  new ArrayList<>();
         mDataset.add(new CardsModel("Комунальне господарство", "вул.Б.Кротова,22,Дніпропетровськ", "13.12.12", "7 днів", "1", R.mipmap.ic_flight_takeoff_black_24dp));
         mDataset.add(new CardsModel("Благоустрій та будівництво", "Дніпропетровськ,вулиця Олеся Гончара", "25.06.13", "6 днів", "3", R.mipmap.ic_shopping_cart_black_24dp));
-        mDataset.add(new CardsModel("1Благоустрій та будівництво", "Дніпропетровськ,проспект Богдана Хмельницького", "19.09.91", "6 днів", "3", R.mipmap.ic_swap_horiz_black_24dp));
+        mDataset.add(new CardsModel("1Благоустрій та будівництво", "Дніпропетровськ,проспект Богдана Хмельницького", "11.09.91", "6 днів", "3", R.mipmap.ic_swap_horiz_black_24dp));
         mDataset.add(new CardsModel("2Благоустрій та будівництво", "Дніпропетровськ,проспект Карла Маркса", "13.12.12", "5 днів", "6", R.mipmap.ic_timeline_black_24dp));
         mDataset.add(new CardsModel("3Благоустрій та будівництво", "Дніпропетровськ,узвіз Крутогірний", "13.12.12", "5 днів", "2", R.mipmap.ic_warning_black_24dp));
 
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_tab_in_working);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(mDataset));
         return mView;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 }

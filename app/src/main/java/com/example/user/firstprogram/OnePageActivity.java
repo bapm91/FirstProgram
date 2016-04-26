@@ -19,6 +19,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OnePageActivity extends AppCompatActivity {
+    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView mRecyclerView;
+
     @OnClick({R.id.create,
             R.id.createDate,
             R.id.header,
@@ -41,29 +44,29 @@ public class OnePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.one_page_activity);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
         ButterKnife.bind(this);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle(R.string.app_name);
+        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         assert mToolbar != null;
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                OnePageActivity.this.finish();
             }
         });
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setFocusable(false);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setFocusable(false);
+        mLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        mRecyclerView.setLayoutManager(mLayoutManager);
         OnePageRecyclerViewAdapter Adapter = new OnePageRecyclerViewAdapter(Arrays.asList(getResources().getStringArray(R.array.image_urls)), this);
-        recyclerView.setAdapter(Adapter);
-
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(Adapter);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         Intent intent = getIntent();
         int value = intent.getIntExtra("position", 0);

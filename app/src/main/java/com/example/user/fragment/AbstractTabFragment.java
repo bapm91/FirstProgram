@@ -10,7 +10,6 @@ import android.view.View;
 public class AbstractTabFragment extends Fragment {
 
     protected String title;
-    protected Context context;
     protected View mView;
 
     public void setTitle(String title) {
