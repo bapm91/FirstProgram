@@ -15,6 +15,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:label="@string/one_page_activity"
+            android:screenOrientation="portrait"
             android:noHistory="true"
             android:name=".OnePageActivity">
         </activity>

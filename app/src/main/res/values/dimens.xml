@@ -7,9 +7,11 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="some_margin">16dp</dimen>
+    <dimen name="some_margin_more">22dp</dimen>
     <dimen name="card_margin">8dp</dimen>
-    <dimen name="card_icon">31dp</dimen>
+    <dimen name="card_icon">40dp</dimen>
     <dimen name="e_contact_horizontal">16dp</dimen>
+    <dimen name="e_contact_top">48dp</dimen>
     <dimen name="tab_layout_padding">10dp</dimen>
     <dimen name="text_size">14dp</dimen>
     <dimen name="one_page_activity_scroll">54dp</dimen>
@@ -23,7 +25,7 @@
     <dimen name="card_image_like">18dp</dimen>
     <dimen name="card_image_like_margin_top">13dp</dimen>
     <dimen name="card_icon_margin_start">19dp</dimen>
-    <dimen name="card_likes_margin_start">46dp</dimen>
+    <dimen name="card_likes_margin_start">49dp</dimen>
     <dimen name="card_likes_text_size">14sp</dimen>
     <dimen name="card_likes_width">17dp</dimen>
     <dimen name="card_days_margin_start">266dp</dimen>
@@ -42,4 +44,6 @@
     <dimen name="card_view_radius">7dp</dimen>
     <dimen name="card_view_elevation">3dp</dimen>
     <dimen name="card_view_height">136dp</dimen>
+    <dimen name="fab_push">12dp</dimen>
+    <dimen name="card_margin_card_street">6dp</dimen>
 </resources>

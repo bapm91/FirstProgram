@@ -50,7 +50,7 @@
                 android:layout_height="@dimen/card_street_height"
                 android:id="@+id/card_street"
                 android:textSize="@dimen/card_likes_text_size"
-                android:layout_marginTop="@dimen/card_margin"
+                android:layout_marginTop="@dimen/card_margin_card_street"
                 android:layout_marginStart="@dimen/card_street_margin_start"
                 android:layout_marginLeft="@dimen/some_margin"
                 android:fontFamily="sans-serif-medium"
@@ -105,6 +105,7 @@
                 android:layout_height="@dimen/card_icon"
                 android:layout_marginLeft="@dimen/some_margin"
                 android:layout_marginTop="21dp"
+                android:alpha="0.54"
                 android:id="@+id/card_icon"
                 android:src="@mipmap/ic_settings_black_24dp"
                 android:layout_marginStart="@dimen/card_icon_margin_start"/>
@@ -112,12 +113,13 @@
             <ImageView
                 android:layout_width="@dimen/card_image_like"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/some_margin"
+                android:layout_marginLeft="@dimen/card_image_like"
                 android:src="@mipmap/ic_thumb_up_black_24dp"
                 android:layout_below="@+id/card_street"
+                android:alpha="0.19"
                 android:id="@+id/card_image_like"
                 android:layout_marginTop="@dimen/card_image_like_margin_top"
-                android:layout_marginStart="@dimen/some_margin"/>
+                android:layout_marginStart="@dimen/some_margin_more"/>
 
         </RelativeLayout>
 

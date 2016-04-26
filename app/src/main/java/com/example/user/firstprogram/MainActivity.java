@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity
         initTabs();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, R.string.app_name, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, R.string.app_name, Snackbar.LENGTH_LONG)
+                //.setAction("Action", null).show();
             }
         });
 
