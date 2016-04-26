@@ -6,9 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.user.adapter.ListViewAdapter;
 import com.example.user.firstprogram.R;
 
 import java.util.ArrayList;
@@ -32,10 +32,13 @@ public class ExpectFragment extends AbstractTabFragment {
         mView = inflater.inflate(LayoutThis, container, false);
 
         listView = (ListView) mView.findViewById(R.id.expect_list_view);
-        List<String> list = new ArrayList<String>();
+        List<CardsModel> mList = new ArrayList<>();
+        mList.add(new CardsModel("Демонтаж інших об'єктів, що входять до переліку мал...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_warning_black_24dp));
+        mList.add(new CardsModel("Питання стосовно нарахування боргу електрое...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trending_up_black_24dp));
+        mList.add(new CardsModel("Ремонт та обслуговування ліфтів", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trash));
+        mList.add(new CardsModel("Прибирання та санітарний стан території", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_timeline_black_24dp));
 
-        ArrayAdapter<String> ListViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
-        listView.setAdapter(ListViewAdapter);
+        listView.setAdapter(new ListViewAdapter(mList));
 
         return mView;
     }
