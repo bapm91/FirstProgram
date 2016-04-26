@@ -10,11 +10,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginLeft="@dimen/e_contact_horizontal"
+        android:layout_marginTop="@dimen/e_contact_horizontal"
         android:text="@string/e_contact"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="@dimen/e_contact_text_size"
         android:textStyle="bold" />
 
 </LinearLayout>

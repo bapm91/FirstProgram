@@ -18,21 +18,11 @@ import java.util.List;
 public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecyclerViewAdapter.ViewHolder> {
     private List<String> mItemsData;
     private Context mContext;
-    private Picasso mPicasso;
     private static final int IMAGE_SIZE = 479;
 
     public OnePageRecyclerViewAdapter(List<String> mItemsData, Context context) {
         this.mItemsData = mItemsData;
         mContext = context;
-        mPicasso = new Picasso.Builder(context)
-                .listener(new Picasso.Listener() {
-                    @Override
-                    public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
-                        System.out.printf("Yo %s\n", uri.toString());
-                        exception.printStackTrace(System.out);
-                    }
-                })
-                .build();
     }
 
     @Override
@@ -53,13 +43,12 @@ public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecy
 
     @Override
     public void onBindViewHolder(OnePageRecyclerViewAdapter.ViewHolder viewHolder, final int position) {
-
-        mPicasso.load(mItemsData.get(position))
+        Picasso.with(mContext)
+                .load(mItemsData.get(position))
                 .resize(IMAGE_SIZE, IMAGE_SIZE)
                 .centerCrop()
-                .skipMemoryCache()
                 .into(viewHolder.imgViewIcon);
-        viewHolder.imgViewIcon.setTag(position);
+
         viewHolder.imgViewIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

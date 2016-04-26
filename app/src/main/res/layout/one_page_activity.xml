@@ -10,7 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="@dimen/one_page_activity_scroll"
         android:background="@color/background">
 
         <LinearLayout
@@ -29,7 +29,7 @@
                     style="@style/TaskNames"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="7dp"
+                    android:paddingBottom="@dimen/status_text_view_vertical_padding"
                     android:text="@string/header" />
 
                 <TextView
