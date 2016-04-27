@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.user.adapter.ListViewAdapter;
 import com.example.user.firstprogram.R;
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,8 @@ public class ExpectFragment extends AbstractTabFragment {
         mList.add(new CardsModel("Прибирання та санітарний стан території", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_timeline_black_24dp));
 
         listView.setAdapter(new ListViewAdapter(mList));
+        FloatingActionButton fab = (FloatingActionButton) mView.findViewById(R.id.fab_expect);
+        fab.attachToListView(listView);
 
         return mView;
     }

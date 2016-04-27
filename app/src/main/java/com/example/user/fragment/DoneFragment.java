@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.user.adapter.RecyclerTabAdapter;
 import com.example.user.firstprogram.R;
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,9 @@ public class DoneFragment extends AbstractTabFragment {
         RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_done);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(mDataset));
+
+        FloatingActionButton fab = (FloatingActionButton) mView.findViewById(R.id.fab_done);
+        fab.attachToRecyclerView(recyclerView);
         return mView;
     }
 }

@@ -13,6 +13,4 @@
     tools:context="com.example.user.firstprogram.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <include layout="@layout/fragment_in_working"/>
-
 </RelativeLayout>

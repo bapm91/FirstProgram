@@ -3,6 +3,7 @@ package com.example.user.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.user.adapter.RecyclerTabAdapter;
 import com.example.user.firstprogram.R;
+import com.melnykov.fab.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +49,15 @@ public class InWorkingFragment extends AbstractTabFragment {
         mDataset.add(new CardsModel("2Благоустрій та будівництво", "Дніпропетровськ,проспект Карла Маркса", "13.12.12", "5 днів", "6", R.mipmap.ic_timeline_black_24dp));
         mDataset.add(new CardsModel("3Благоустрій та будівництво", "Дніпропетровськ,узвіз Крутогірний", "13.12.12", "5 днів", "2", R.mipmap.ic_warning_black_24dp));
 
-        RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_tab_in_working);
+        RecyclerView recyclerView  = (RecyclerView) mView.findViewById(R.id.recycler_tab_in_working);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(mDataset));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        FloatingActionButton fab = (FloatingActionButton) mView.findViewById(R.id.fab);
+        fab.attachToRecyclerView(recyclerView);
+
         return mView;
     }
 }
