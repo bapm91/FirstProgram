@@ -16,10 +16,10 @@ import com.example.user.cardsModel.CardsModel;
 import java.util.List;
 
 public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.ViewHolder> {
-    private List<CardsModel> mDataset;
+    private List<CardsModel> dataset;
 
-    public RecyclerTabAdapter(List<CardsModel> mDataset){
-        this.mDataset = mDataset;
+    public RecyclerTabAdapter(List<CardsModel> dataset){
+        this.dataset = dataset;
     }
 
     @Override
@@ -61,17 +61,17 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextViewHeader.setText(mDataset.get(position).getHeader());
-        holder.mTextViewDate.setText(mDataset.get(position).getDate());
-        holder.mTextViewDays.setText(mDataset.get(position).getDays());
-        holder.mTextViewAdress.setText(mDataset.get(position).getAdress());
-        holder.mTextViewLikes.setText(mDataset.get(position).getLikes());
-        holder.mCardIcon.setImageResource(mDataset.get(position).getCardIcon());
+        holder.mTextViewHeader.setText(dataset.get(position).getHeader());
+        holder.mTextViewDate.setText(dataset.get(position).getDate());
+        holder.mTextViewDays.setText(dataset.get(position).getDays());
+        holder.mTextViewAdress.setText(dataset.get(position).getAdress());
+        holder.mTextViewLikes.setText(dataset.get(position).getLikes());
+        holder.mCardIcon.setImageResource(dataset.get(position).getCardIcon());
         holder.mCardView.setTag(position);
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return dataset.size();
     }
 }
