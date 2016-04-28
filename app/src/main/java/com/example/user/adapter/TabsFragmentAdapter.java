@@ -5,27 +5,29 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.user.fragment.AbstractTabFragment;
 import com.example.user.fragment.DoneFragment;
 import com.example.user.fragment.ExpectFragment;
 import com.example.user.fragment.InWorkingFragment;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TabsFragmentAdapter extends FragmentPagerAdapter{
-    private Map<Integer, AbstractTabFragment> tabs;
+    private Map<Integer, Fragment> tabs;
     private Context context;
+    private List<String> mList;
 
-    public TabsFragmentAdapter(Context context, FragmentManager fragmentManager) {
+    public TabsFragmentAdapter(Context context, FragmentManager fragmentManager, List<String> mList) {
         super(fragmentManager);
         this.context = context;
+        this.mList = mList;
         initTabMap(context);
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabs.get(position).getTitle();
+        return mList.get(position);
     }
 
     @Override

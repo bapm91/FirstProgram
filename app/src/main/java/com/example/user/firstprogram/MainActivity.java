@@ -14,6 +14,9 @@ import android.view.MenuItem;
 
 import com.example.user.adapter.TabsFragmentAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar mToolbar;
@@ -42,7 +45,11 @@ public class MainActivity extends AppCompatActivity
 
     private void initTabs() {
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
-        TabsFragmentAdapter adapter = new TabsFragmentAdapter(this, getSupportFragmentManager());
+        List<String> mList = new ArrayList<>();
+        mList.add(getString(R.string.tab_in_working));
+        mList.add(getString(R.string.tab_done));
+        mList.add(getString(R.string.tab_expect));
+        TabsFragmentAdapter adapter = new TabsFragmentAdapter(this, getSupportFragmentManager(), mList);
         mViewPager.setAdapter(adapter);
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
         assert mTabLayout != null;

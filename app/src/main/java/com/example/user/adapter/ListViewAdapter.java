@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.user.firstprogram.OnePageActivity;
 import com.example.user.firstprogram.R;
-import com.example.user.fragment.CardsModel;
+import com.example.user.cardsModel.CardsModel;
 
 import java.util.List;
 
@@ -22,9 +22,13 @@ public class ListViewAdapter extends BaseAdapter{
         this.mList = mList;
     }
 
-    @Override
-    public int getCount() {
-        return mList.size();
+    static class ViewHolder{
+        TextView mTextViewHeader;
+        TextView mTextViewLikes;
+        TextView mTextViewDate;
+        TextView mTextViewDays;
+        TextView mTextViewAdress;
+        ImageView mCardIcon;
     }
 
     @Override
@@ -33,25 +37,31 @@ public class ListViewAdapter extends BaseAdapter{
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        ViewHolder viewHolder;
         View view = convertView;
         if (view == null){
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout,parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.mTextViewHeader = (TextView) view.findViewById(R.id.mTitle);
+            viewHolder.mTextViewLikes = (TextView) view.findViewById(R.id.card_likes);
+            viewHolder.mTextViewDays = (TextView) view.findViewById(R.id.card_days);
+            viewHolder.mTextViewDate = (TextView) view.findViewById(R.id.card_date);
+            viewHolder.mTextViewAdress = (TextView) view.findViewById(R.id.card_street);
+            viewHolder.mCardIcon = (ImageView) view.findViewById(R.id.card_icon);
+            view.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) view.getTag();
         }
 
         CardsModel cardsModel = getCardModel(position);
 
-        ((TextView) view.findViewById(R.id.title)).setText(cardsModel.header);
-        ((TextView) view.findViewById(R.id.card_date)).setText(cardsModel.date);
-        ((TextView) view.findViewById(R.id.card_days)).setText(cardsModel.days);
-        ((TextView) view.findViewById(R.id.card_street)).setText(cardsModel.adress);
-        ((TextView) view.findViewById(R.id.card_likes)).setText(cardsModel.likes);
-        ((ImageView) view.findViewById(R.id.card_icon)).setImageResource(cardsModel.cardIcon);
+        viewHolder.mTextViewHeader.setText(cardsModel.getHeader());
+        viewHolder.mTextViewDate.setText(cardsModel.getDate());
+        viewHolder.mTextViewDays.setText(cardsModel.getDays());
+        viewHolder.mTextViewAdress.setText(cardsModel.getAdress());
+        viewHolder.mTextViewLikes.setText(cardsModel.getLikes());
+        viewHolder.mCardIcon.setImageResource(cardsModel.getCardIcon());
 
         CardView cardView = (CardView) view.findViewById(R.id.card_view);
 
@@ -68,5 +78,15 @@ public class ListViewAdapter extends BaseAdapter{
 
     private CardsModel getCardModel(int position) {
         return ((CardsModel) getItem(position));
+    }
+
+    @Override
+    public int getCount() {
+        return mList.size();
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 }

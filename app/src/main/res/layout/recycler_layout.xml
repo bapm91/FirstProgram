@@ -43,7 +43,7 @@
                 android:textColor="@color/blak"
                 android:textStyle="normal"
                 android:fontFamily="sans-serif-medium"
-                android:id="@+id/title"/>
+                android:id="@+id/mTitle"/>
 
             <TextView
                 android:layout_width="@dimen/card_street_width"
@@ -55,7 +55,7 @@
                 android:layout_marginLeft="@dimen/some_margin"
                 android:fontFamily="sans-serif-medium"
                 android:textStyle="normal"
-                android:layout_below="@+id/title"
+                android:layout_below="@+id/mTitle"
                 android:textColor="@color/blak_54"/>
 
             <TextView

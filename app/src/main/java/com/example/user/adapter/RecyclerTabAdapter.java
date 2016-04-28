@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.example.user.firstprogram.OnePageActivity;
 import com.example.user.firstprogram.R;
-import com.example.user.fragment.CardsModel;
+import com.example.user.cardsModel.CardsModel;
 
 import java.util.List;
 
@@ -49,8 +49,8 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
         ImageView mCardIcon;
         public ViewHolder(View itemView) {
             super(itemView);
-            mCardView = (CardView) itemView.findViewById(R.id.card_view);
-            mTextViewHeader = (TextView) itemView.findViewById(R.id.title);
+            mCardView =(CardView) itemView.findViewById(R.id.card_view);
+            mTextViewHeader = (TextView) itemView.findViewById(R.id.mTitle);
             mTextViewDate = (TextView) itemView.findViewById(R.id.card_date);
             mTextViewDays = (TextView) itemView.findViewById(R.id.card_days);
             mTextViewAdress = (TextView) itemView.findViewById(R.id.card_street);
@@ -61,12 +61,12 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextViewHeader.setText(mDataset.get(position).header);
-        holder.mTextViewDate.setText(mDataset.get(position).date);
-        holder.mTextViewDays.setText(mDataset.get(position).days);
-        holder.mTextViewAdress.setText(mDataset.get(position).adress);
-        holder.mTextViewLikes.setText(mDataset.get(position).likes);
-        holder.mCardIcon.setImageResource(mDataset.get(position).cardIcon);
+        holder.mTextViewHeader.setText(mDataset.get(position).getHeader());
+        holder.mTextViewDate.setText(mDataset.get(position).getDate());
+        holder.mTextViewDays.setText(mDataset.get(position).getDays());
+        holder.mTextViewAdress.setText(mDataset.get(position).getAdress());
+        holder.mTextViewLikes.setText(mDataset.get(position).getLikes());
+        holder.mCardIcon.setImageResource(mDataset.get(position).getCardIcon());
         holder.mCardView.setTag(position);
     }
 
