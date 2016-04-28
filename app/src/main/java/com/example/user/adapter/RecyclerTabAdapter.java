@@ -11,14 +11,14 @@ import android.widget.TextView;
 
 import com.example.user.firstprogram.OnePageActivity;
 import com.example.user.firstprogram.R;
-import com.example.user.fragment.AbstractTabFragment;
+import com.example.user.fragment.CardsModel;
 
 import java.util.List;
 
 public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.ViewHolder> {
-    private List<AbstractTabFragment.CardsModel> mDataset;
+    private List<CardsModel> mDataset;
 
-    public RecyclerTabAdapter(List<AbstractTabFragment.CardsModel> mDataset){
+    public RecyclerTabAdapter(List<CardsModel> mDataset){
         this.mDataset = mDataset;
     }
 

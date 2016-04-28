@@ -3,6 +3,7 @@ package com.example.user.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,8 +18,14 @@ import com.melnykov.fab.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InWorkingFragment extends AbstractTabFragment {
+public class InWorkingFragment extends Fragment {
     private static final int LayoutThis = R.layout.fragment_in_working;
+    private String title;
+    private View mView;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public static InWorkingFragment getInstance(Context context) {
         Bundle args = new Bundle();
@@ -59,5 +66,9 @@ public class InWorkingFragment extends AbstractTabFragment {
         fab.attachToRecyclerView(recyclerView);
 
         return mView;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

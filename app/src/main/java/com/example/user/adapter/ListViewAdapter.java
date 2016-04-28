@@ -11,14 +11,14 @@ import android.widget.TextView;
 
 import com.example.user.firstprogram.OnePageActivity;
 import com.example.user.firstprogram.R;
-import com.example.user.fragment.AbstractTabFragment;
+import com.example.user.fragment.CardsModel;
 
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter{
-    private List<AbstractTabFragment.CardsModel> mList;
+    private List<CardsModel> mList;
 
-    public ListViewAdapter( List<AbstractTabFragment.CardsModel> mList) {
+    public ListViewAdapter( List<CardsModel> mList) {
         this.mList = mList;
     }
 
@@ -44,7 +44,7 @@ public class ListViewAdapter extends BaseAdapter{
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout,parent, false);
         }
 
-        AbstractTabFragment.CardsModel cardsModel = getCardModel(position);
+        CardsModel cardsModel = getCardModel(position);
 
         ((TextView) view.findViewById(R.id.title)).setText(cardsModel.header);
         ((TextView) view.findViewById(R.id.card_date)).setText(cardsModel.date);
@@ -63,12 +63,10 @@ public class ListViewAdapter extends BaseAdapter{
                 view.getContext().startActivity(intent);
             }
         });
-
-
         return view;
     }
 
-    private AbstractTabFragment.CardsModel getCardModel(int position) {
-        return ((AbstractTabFragment.CardsModel) getItem(position));
+    private CardsModel getCardModel(int position) {
+        return ((CardsModel) getItem(position));
     }
 }

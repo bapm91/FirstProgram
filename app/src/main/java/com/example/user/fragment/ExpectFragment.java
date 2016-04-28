@@ -3,6 +3,7 @@ package com.example.user.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,15 @@ import com.melnykov.fab.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExpectFragment extends AbstractTabFragment {
+public class ExpectFragment extends Fragment {
     private static final int LayoutThis = R.layout.fragment_expect;
+    private String title;
+    private View mView;
     private ListView listView;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public static ExpectFragment getInstance(Context context) {
         Bundle args = new Bundle();
@@ -51,5 +58,9 @@ public class ExpectFragment extends AbstractTabFragment {
         fab.attachToListView(listView);
 
         return mView;
+    }
+
+    public String getTitle() {
+        return title;
     }
 }
