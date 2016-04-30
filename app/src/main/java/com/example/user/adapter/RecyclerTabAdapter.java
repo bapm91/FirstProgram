@@ -18,7 +18,7 @@ import java.util.List;
 public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.ViewHolder> {
     private List<CardsModel> dataset;
 
-    public RecyclerTabAdapter(List<CardsModel> dataset){
+    public RecyclerTabAdapter(List<CardsModel> dataset) {
         this.dataset = dataset;
     }
 
@@ -39,21 +39,22 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
         return viewHolder;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         CardView mCardView;
         TextView mTextViewHeader;
         TextView mTextViewLikes;
         TextView mTextViewDate;
         TextView mTextViewDays;
-        TextView mTextViewAdress;
+        TextView mTextViewAddress;
         ImageView mCardIcon;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            mCardView =(CardView) itemView.findViewById(R.id.card_view);
+            mCardView = (CardView) itemView.findViewById(R.id.card_view);
             mTextViewHeader = (TextView) itemView.findViewById(R.id.mTitle);
             mTextViewDate = (TextView) itemView.findViewById(R.id.card_date);
             mTextViewDays = (TextView) itemView.findViewById(R.id.card_days);
-            mTextViewAdress = (TextView) itemView.findViewById(R.id.card_street);
+            mTextViewAddress = (TextView) itemView.findViewById(R.id.card_street);
             mTextViewLikes = (TextView) itemView.findViewById(R.id.card_likes);
             mCardIcon = (ImageView) itemView.findViewById(R.id.card_icon);
         }
@@ -64,7 +65,7 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
         holder.mTextViewHeader.setText(dataset.get(position).getHeader());
         holder.mTextViewDate.setText(dataset.get(position).getDate());
         holder.mTextViewDays.setText(dataset.get(position).getDays());
-        holder.mTextViewAdress.setText(dataset.get(position).getAdress());
+        holder.mTextViewAddress.setText(dataset.get(position).getAddress());
         holder.mTextViewLikes.setText(dataset.get(position).getLikes());
         holder.mCardIcon.setImageResource(dataset.get(position).getCardIcon());
         holder.mCardView.setTag(position);

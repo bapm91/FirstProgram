@@ -1,6 +1,5 @@
 package com.example.user.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -20,9 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InWorkingFragment extends Fragment {
-    private View mView;
 
-    public static InWorkingFragment getInstance(Context context) {
+    public static InWorkingFragment getInstance() {
         Bundle args = new Bundle();
         InWorkingFragment fragment = new InWorkingFragment();
         fragment.setArguments(args);
@@ -32,8 +30,8 @@ public class InWorkingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_in_working, container, false);
-        List<CardsModel> dataset =  new ArrayList<>();
+        View view = inflater.inflate(R.layout.fragment_in_working, container, false);
+        List<CardsModel> dataset = new ArrayList<>();
         dataset.add(new CardsModel("Комунальне господарство", "вул.Б.Кротова,22,Дніпропетровськ", "13.12.12", "7 днів", "1", R.mipmap.ic_flight_takeoff_black_24dp));
         dataset.add(new CardsModel("Благоустрій та будівництво", "Дніпропетровськ,вулиця Олеся Гончара", "25.06.13", "6 днів", "3", R.mipmap.ic_shopping_cart_black_24dp));
         dataset.add(new CardsModel("1Благоустрій та будівництво", "Дніпропетровськ,проспект Богдана Хмельницького", "11.09.91", "6 днів", "3", R.mipmap.ic_swap_horiz_black_24dp));
@@ -50,15 +48,15 @@ public class InWorkingFragment extends Fragment {
         dataset.add(new CardsModel("2Благоустрій та будівництво", "Дніпропетровськ,проспект Карла Маркса", "13.12.12", "5 днів", "6", R.mipmap.ic_timeline_black_24dp));
         dataset.add(new CardsModel("3Благоустрій та будівництво", "Дніпропетровськ,узвіз Крутогірний", "13.12.12", "5 днів", "2", R.mipmap.ic_warning_black_24dp));
 
-        RecyclerView recyclerView  = (RecyclerView) mView.findViewById(R.id.recycler_tab_in_working);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_tab_in_working);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(dataset));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        FloatingActionButton fab = (FloatingActionButton) mView.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.attachToRecyclerView(recyclerView);
 
-        return mView;
+        return view;
     }
 }

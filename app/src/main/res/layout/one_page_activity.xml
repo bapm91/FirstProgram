@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.user.myapplication.MainActivity">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.example.user.myapplication.MainActivity">
 
-    <include layout="@layout/one_page_toolbar" />
+    <include layout="@layout/one_page_toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,182 +13,176 @@
         android:layout_marginTop="@dimen/one_page_activity_scroll"
         android:background="@color/background">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="@dimen/activity_horizontal_margin">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
 
-            <RelativeLayout
+            <TextView
+                android:id="@+id/header"
+                style="@style/TaskNames"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:paddingBottom="@dimen/status_text_view_vertical_padding"
+                android:text="@string/header"/>
 
-                <TextView
-                    android:id="@+id/header"
-                    style="@style/TaskNames"
+            <TextView
+                android:id="@+id/status"
+                style="@style/TaskNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/header"
+                android:background="@drawable/oval"
+                android:paddingBottom="@dimen/status_text_view_vertical_padding"
+                android:paddingLeft="@dimen/status_text_view_horizonal_padding"
+                android:paddingRight="@dimen/status_text_view_horizonal_padding"
+                android:paddingTop="@dimen/status_text_view_vertical_padding"
+                android:text="@string/status"
+                android:textColor="@color/white"/>
+
+            <View
+                android:id="@+id/view"
+                style="@style/View"
+                android:layout_width="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/status"/>
+
+            <TextView
+                android:id="@+id/create"
+                style="@style/TaskDates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/view"
+                android:text="@string/create"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TextView
+                android:id="@+id/createDate"
+                style="@style/TaskNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/view"
+                android:layout_alignRight="@+id/view"
+                android:layout_alignTop="@+id/create"
+                android:text="@string/created_date"/>
+
+            <View
+                android:id="@+id/view2"
+                style="@style/View"
+                android:layout_width="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/create"/>
+
+            <TextView
+                android:id="@+id/registered"
+                style="@style/TaskDates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/view2"
+                android:text="@string/registered"/>
+
+            <TextView
+                android:id="@+id/registered_date"
+                style="@style/TaskNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/registered"
+                android:text="@string/registered_date"/>
+
+            <View
+                android:id="@+id/view3"
+                style="@style/View"
+                android:layout_width="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/registered"/>
+
+            <TextView
+                android:id="@+id/deadline"
+                style="@style/TaskDates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/view3"
+                android:text="@string/deadline"/>
+
+            <TextView
+                android:id="@+id/deadline_date"
+                style="@style/TaskNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/deadline"
+                android:text="@string/deadline_date"/>
+
+            <View
+                android:id="@+id/view4"
+                style="@style/View"
+                android:layout_width="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/deadline"/>
+
+            <TextView
+                android:id="@+id/responsible"
+                style="@style/TaskDates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/view4"
+                android:text="@string/responsible"/>
+
+            <TextView
+                android:id="@+id/responsible_name"
+                style="@style/TaskNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/responsible"
+                android:text="@string/responsible_name"/>
+
+            <View
+                android:id="@+id/view5"
+                style="@style/View"
+                android:layout_width="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/responsible"/>
+
+            <TextView
+                android:id="@+id/text"
+                style="@style/TaskNames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view5"
+                android:text="@string/text"/>
+
+            <LinearLayout
+                android:id="@+id/layoutRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/status_text_view_vertical_padding"
-                    android:text="@string/header" />
-
-                <TextView
-                    android:id="@+id/status"
-                    style="@style/TaskNames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/header"
-                    android:background="@drawable/oval"
-                    android:paddingBottom="@dimen/status_text_view_vertical_padding"
-                    android:paddingLeft="@dimen/status_text_view_horizonal_padding"
-                    android:paddingRight="@dimen/status_text_view_horizonal_padding"
-                    android:paddingTop="@dimen/status_text_view_vertical_padding"
-                    android:text="@string/status"
-                    android:textColor="@color/white" />
-
-                <View
-                    android:id="@+id/view"
-                    style="@style/View"
-                    android:layout_width="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/status" />
-
-                <TextView
-                    android:id="@+id/create"
-                    style="@style/TaskDates"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/view"
-                    android:text="@string/create"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <TextView
-                    android:id="@+id/createDate"
-                    style="@style/TaskNames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/view"
-                    android:layout_alignRight="@+id/view"
-                    android:layout_alignTop="@+id/create"
-                    android:text="@string/created_date" />
-
-                <View
-                    android:id="@+id/view2"
-                    style="@style/View"
-                    android:layout_width="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/create" />
-
-                <TextView
-                    android:id="@+id/registered"
-                    style="@style/TaskDates"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/view2"
-                    android:text="@string/registered" />
-
-                <TextView
-                    android:id="@+id/registered_date"
-                    style="@style/TaskNames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/registered"
-                    android:text="@string/registered_date" />
-
-                <View
-                    android:id="@+id/view3"
-                    style="@style/View"
-                    android:layout_width="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/registered" />
-
-                <TextView
-                    android:id="@+id/deadline"
-                    style="@style/TaskDates"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/view3"
-                    android:text="@string/deadline" />
-
-                <TextView
-                    android:id="@+id/deadline_date"
-                    style="@style/TaskNames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/deadline"
-                    android:text="@string/deadline_date" />
-
-                <View
-                    android:id="@+id/view4"
-                    style="@style/View"
-                    android:layout_width="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/deadline" />
-
-                <TextView
-                    android:id="@+id/responsible"
-                    style="@style/TaskDates"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/view4"
-                    android:text="@string/responsible" />
-
-                <TextView
-                    android:id="@+id/responsible_name"
-                    style="@style/TaskNames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/responsible"
-                    android:text="@string/responsible_name" />
-
-                <View
-                    android:id="@+id/view5"
-                    style="@style/View"
-                    android:layout_width="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/responsible" />
-
-                <TextView
-                    android:id="@+id/text"
-                    style="@style/TaskNames"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/view5"
-                    android:text="@string/text" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/layoutRecycler"
-                    android:layout_below="@+id/text">
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/recycler_view"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:scrollbars="horizontal">
-                    </android.support.v7.widget.RecyclerView>
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

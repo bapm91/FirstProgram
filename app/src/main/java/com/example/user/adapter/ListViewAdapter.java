@@ -15,24 +15,24 @@ import com.example.user.cardsModel.CardsModel;
 
 import java.util.List;
 
-public class ListViewAdapter extends BaseAdapter{
+public class ListViewAdapter extends BaseAdapter {
     private List<CardsModel> list;
 
-    public ListViewAdapter( List<CardsModel> list) {
+    public ListViewAdapter(List<CardsModel> list) {
         this.list = list;
     }
 
-    static class ViewHolder{
+    static class ViewHolder {
         TextView mTextViewHeader;
         TextView mTextViewLikes;
         TextView mTextViewDate;
         TextView mTextViewDays;
-        TextView mTextViewAdress;
+        TextView mTextViewAddress;
         ImageView mCardIcon;
     }
 
     @Override
-    public Object getItem(int position) {
+    public CardsModel getItem(int position) {
         return list.get(position);
     }
 
@@ -40,14 +40,14 @@ public class ListViewAdapter extends BaseAdapter{
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         View view = convertView;
-        if (view == null){
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout,parent, false);
+        if (view == null) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.mTextViewHeader = (TextView) view.findViewById(R.id.mTitle);
             viewHolder.mTextViewLikes = (TextView) view.findViewById(R.id.card_likes);
             viewHolder.mTextViewDays = (TextView) view.findViewById(R.id.card_days);
             viewHolder.mTextViewDate = (TextView) view.findViewById(R.id.card_date);
-            viewHolder.mTextViewAdress = (TextView) view.findViewById(R.id.card_street);
+            viewHolder.mTextViewAddress = (TextView) view.findViewById(R.id.card_street);
             viewHolder.mCardIcon = (ImageView) view.findViewById(R.id.card_icon);
             view.setTag(viewHolder);
         } else {
@@ -59,7 +59,7 @@ public class ListViewAdapter extends BaseAdapter{
         viewHolder.mTextViewHeader.setText(cardsModel.getHeader());
         viewHolder.mTextViewDate.setText(cardsModel.getDate());
         viewHolder.mTextViewDays.setText(cardsModel.getDays());
-        viewHolder.mTextViewAdress.setText(cardsModel.getAdress());
+        viewHolder.mTextViewAddress.setText(cardsModel.getAddress());
         viewHolder.mTextViewLikes.setText(cardsModel.getLikes());
         viewHolder.mCardIcon.setImageResource(cardsModel.getCardIcon());
 
@@ -69,7 +69,7 @@ public class ListViewAdapter extends BaseAdapter{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), OnePageActivity.class);
-                intent.putExtra("position",position);
+                intent.putExtra("position", position);
                 view.getContext().startActivity(intent);
             }
         });
@@ -77,7 +77,7 @@ public class ListViewAdapter extends BaseAdapter{
     }
 
     private CardsModel getCardModel(int position) {
-        return ((CardsModel) getItem(position));
+        return getItem(position);
     }
 
     @Override

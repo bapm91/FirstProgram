@@ -1,9 +1,5 @@
 <resources>
     <string-array name="image_urls">
-        <item >https://lh6.googleusercontent.com/-8HO-4vIFnlw/URquZnsFgtI/AAAAAAAAAbs/WT8jViTF7vw/s1024/Antelope252520Hallway.jpg</item>
-        <item>https://lh5.googleusercontent.com/-0BDXkYmckbo/URquhKFW84I/AAAAAAAAAbs/ogQtHCTk2JQ/s1024/Closed252520Door.jpg</item>
-        <item>https://lh3.googleusercontent.com/-PyggXXZRykM/URquh-kVvoI/AAAAAAAAAbs/hFtDwhtrHHQ/s1024/Colorado252520River252520Sunset.jpg</item>
-        <item>https://lh4.googleusercontent.com/-e9NHZ5k5MSs/URqvMIBZjtI/AAAAAAAAAbs/1fV810rDNfQ/s1024/Yosemite252520Tree.jpg</item>
         <item >http://am.cdnmob.org/pic/v2/gallery/111x185/hty-more-pejzazh-36151.jpg</item>
         <item>http://am.cdnmob.org/pic/v2/gallery/111x185/osen-pejzazh-risunki-36152.jpg</item>
         <item>http://am.cdnmob.org/pic/v2/gallery/111x185/derevya-pejzazh-36142.jpg</item>

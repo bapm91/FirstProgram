@@ -1,6 +1,5 @@
 package com.example.user.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,10 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExpectFragment extends Fragment {
-    private View mView;
-    private ListView mListView;
 
-    public static ExpectFragment getInstance(Context context) {
+    public static ExpectFragment getInstance() {
         Bundle args = new Bundle();
         ExpectFragment fragment = new ExpectFragment();
         fragment.setArguments(args);
@@ -31,8 +28,8 @@ public class ExpectFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_expect, container, false);
-        mListView = (ListView) mView.findViewById(R.id.expect_list_view);
+        View view = inflater.inflate(R.layout.fragment_expect, container, false);
+        ListView listView = (ListView) view.findViewById(R.id.expect_list_view);
         List<CardsModel> list = new ArrayList<>();
         list.add(new CardsModel("Демонтаж інших об'єктів, що входять до переліку мал...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_warning_black_24dp));
         list.add(new CardsModel("Питання стосовно нарахування боргу електрое...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trending_up_black_24dp));
@@ -47,10 +44,10 @@ public class ExpectFragment extends Fragment {
         list.add(new CardsModel("Ремонт та обслуговування ліфтів", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trash));
         list.add(new CardsModel("Прибирання та санітарний стан території", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_timeline_black_24dp));
 
-        mListView.setAdapter(new ListViewAdapter(list));
-        FloatingActionButton fab = (FloatingActionButton) mView.findViewById(R.id.fab_expect);
-        fab.attachToListView(mListView);
+        listView.setAdapter(new ListViewAdapter(list));
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab_expect);
+        fab.attachToListView(listView);
 
-        return mView;
+        return view;
     }
 }

@@ -19,23 +19,22 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private Toolbar mToolbar;
-    private DrawerLayout mDrawer;
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         initTabs();
 
-        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, mDrawer, mToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        mDrawer.addDrawerListener(toggle);
+                this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        if (drawerLayout != null) {
+            drawerLayout.addDrawerListener(toggle);
+        }
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -44,16 +43,18 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initTabs() {
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         List<String> mList = new ArrayList<>();
         mList.add(getString(R.string.tab_in_working));
         mList.add(getString(R.string.tab_done));
         mList.add(getString(R.string.tab_expect));
-        TabsFragmentAdapter adapter = new TabsFragmentAdapter(this, getSupportFragmentManager(), mList);
-        mViewPager.setAdapter(adapter);
+        TabsFragmentAdapter adapter = new TabsFragmentAdapter(getSupportFragmentManager(), mList);
+        if (viewPager != null) {
+            viewPager.setAdapter(adapter);
+        }
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
         assert mTabLayout != null;
-        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setupWithViewPager(viewPager);
     }
 
     @Override
@@ -76,10 +77,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

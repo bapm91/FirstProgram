@@ -5,15 +5,15 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@mipmap/ic_issues"
-            android:title="All appeal" />
+            android:title="@string/all_appeal" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@mipmap/ic_map"
-            android:title="Appeal on the map" />
+            android:title="@string/appeal_on_the_map" />
 
     </group>
 
-    <item android:title="Sign in">
+    <item android:title="@string/sign_in">
         <menu>
             <item android:title="">
             </item>

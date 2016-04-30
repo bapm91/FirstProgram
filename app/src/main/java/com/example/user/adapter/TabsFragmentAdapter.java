@@ -1,6 +1,5 @@
 package com.example.user.adapter;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -13,16 +12,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TabsFragmentAdapter extends FragmentPagerAdapter{
+public class TabsFragmentAdapter extends FragmentPagerAdapter {
     private Map<Integer, Fragment> tabs;
-    private Context context;
     private List<String> mList;
 
-    public TabsFragmentAdapter(Context context, FragmentManager fragmentManager, List<String> mList) {
+    public TabsFragmentAdapter(FragmentManager fragmentManager, List<String> mList) {
         super(fragmentManager);
-        this.context = context;
         this.mList = mList;
-        initTabMap(context);
+        initTabMap();
     }
 
     @Override
@@ -40,10 +37,10 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter{
         return tabs.size();
     }
 
-    private void initTabMap(Context context) {
+    private void initTabMap() {
         tabs = new HashMap<>();
-        tabs.put(0, InWorkingFragment.getInstance(context));
-        tabs.put(1, DoneFragment.getInstance(context));
-        tabs.put(2, ExpectFragment.getInstance(context));
+        tabs.put(0, InWorkingFragment.getInstance());
+        tabs.put(1, DoneFragment.getInstance());
+        tabs.put(2, ExpectFragment.getInstance());
     }
 }

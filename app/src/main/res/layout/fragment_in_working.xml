@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_tab_in_working"
@@ -18,8 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/ic_fab"
         fab:fab_colorNormal="@color/orange"
         fab:fab_colorPressed="@color/orange"
-        fab:fab_colorRipple="@color/orange"
-        android:src="@mipmap/ic_fab" />
+        fab:fab_colorRipple="@color/orange"/>
 </android.support.design.widget.CoordinatorLayout>

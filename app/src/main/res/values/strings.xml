@@ -24,6 +24,9 @@ Planting 21 trees and 32 bush!
     <string name="tab_in_working">In working</string>
     <string name="tab_done">Done</string>
     <string name="tab_expect">Expect</string>
+    <string name="appeal_on_the_map">Appeal on the map</string>
+    <string name="all_appeal">All appeal</string>
+    <string name="sign_in">Sign in</string>
     <color name="background">#e6e6e6</color>
 
 </resources>

@@ -1,7 +1,6 @@
 package com.example.user.adapter;
 
 import android.content.Context;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +34,7 @@ public class OnePageRecyclerViewAdapter extends RecyclerView.Adapter<OnePageRecy
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgViewIcon;
+
         private ViewHolder(View itemLayoutView) {
             super(itemLayoutView);
             imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.imageView);

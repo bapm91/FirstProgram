@@ -1,6 +1,5 @@
 package com.example.user.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,9 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoneFragment extends Fragment {
-    private View mView;
 
-    public static DoneFragment getInstance(Context context) {
+    public static DoneFragment getInstance() {
         Bundle args = new Bundle();
         DoneFragment fragment = new DoneFragment();
         fragment.setArguments(args);
@@ -31,8 +29,8 @@ public class DoneFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_done, container, false);
-        List<CardsModel> dataset =  new ArrayList<>();
+        View view = inflater.inflate(R.layout.fragment_done, container, false);
+        List<CardsModel> dataset = new ArrayList<>();
         dataset.add(new CardsModel("Демонтаж інших об'єктів, що входять до переліку мал...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_warning_black_24dp));
         dataset.add(new CardsModel("Питання стосовно нарахування боргу електрое...", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trending_up_black_24dp));
         dataset.add(new CardsModel("Ремонт та обслуговування ліфтів", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trash));
@@ -46,12 +44,12 @@ public class DoneFragment extends Fragment {
         dataset.add(new CardsModel("Ремонт та обслуговування ліфтів", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_trash));
         dataset.add(new CardsModel("Прибирання та санітарний стан території", "вул.Вадима Гетьмана, 42", "13.12.12", "7 днів", "0", R.mipmap.ic_timeline_black_24dp));
 
-        RecyclerView recyclerView = (RecyclerView) mView.findViewById(R.id.recycler_done);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_done);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(dataset));
 
-        FloatingActionButton fab = (FloatingActionButton) mView.findViewById(R.id.fab_done);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab_done);
         fab.attachToRecyclerView(recyclerView);
-        return mView;
+        return view;
     }
 }

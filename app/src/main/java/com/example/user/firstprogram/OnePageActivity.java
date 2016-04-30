@@ -1,6 +1,5 @@
 package com.example.user.firstprogram;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -19,8 +18,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class OnePageActivity extends AppCompatActivity {
-    private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerView mRecyclerView;
 
     @OnClick({R.id.create,
             R.id.createDate,
@@ -44,31 +41,36 @@ public class OnePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.one_page_activity);
 
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ButterKnife.bind(this);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle(R.string.app_name);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.app_name);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        assert mToolbar != null;
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OnePageActivity.this.finish();
-            }
-        });
+        if (toolbar != null) {
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setFocusable(false);
-        mLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        OnePageRecyclerViewAdapter Adapter = new OnePageRecyclerViewAdapter(Arrays.asList(getResources().getStringArray(R.array.image_urls)), this);
-        mRecyclerView.setAdapter(Adapter);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(
+                this, RecyclerView.HORIZONTAL, false);
+        OnePageRecyclerViewAdapter adapter = new OnePageRecyclerViewAdapter(
+                Arrays.asList(getResources().getStringArray(R.array.image_urls)), this);
 
-        Intent intent = getIntent();
-        int value = intent.getIntExtra("position", 0);
+        if (recyclerView != null) {
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setFocusable(false);
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setAdapter(adapter);
+            recyclerView.setItemAnimator(new DefaultItemAnimator());
+        }
     }
 }
