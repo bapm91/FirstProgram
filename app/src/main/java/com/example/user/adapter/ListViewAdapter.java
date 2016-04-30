@@ -16,10 +16,10 @@ import com.example.user.cardsModel.CardsModel;
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
-    private List<CardsModel> list;
+    private List<CardsModel> mCardsModelList;
 
-    public ListViewAdapter(List<CardsModel> list) {
-        this.list = list;
+    public ListViewAdapter(List<CardsModel> mCardsModelList) {
+        this.mCardsModelList = mCardsModelList;
     }
 
     static class ViewHolder {
@@ -33,7 +33,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public CardsModel getItem(int position) {
-        return list.get(position);
+        return mCardsModelList.get(position);
     }
 
     @Override
@@ -82,7 +82,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list.size();
+        return mCardsModelList.size();
     }
 
     @Override

@@ -16,10 +16,10 @@ import com.example.user.cardsModel.CardsModel;
 import java.util.List;
 
 public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.ViewHolder> {
-    private List<CardsModel> dataset;
+    private List<CardsModel> mCardsModelList;
 
-    public RecyclerTabAdapter(List<CardsModel> dataset) {
-        this.dataset = dataset;
+    public RecyclerTabAdapter(List<CardsModel> mCardsModelList) {
+        this.mCardsModelList = mCardsModelList;
     }
 
     @Override
@@ -62,17 +62,17 @@ public class RecyclerTabAdapter extends RecyclerView.Adapter<RecyclerTabAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mTextViewHeader.setText(dataset.get(position).getHeader());
-        holder.mTextViewDate.setText(dataset.get(position).getDate());
-        holder.mTextViewDays.setText(dataset.get(position).getDays());
-        holder.mTextViewAddress.setText(dataset.get(position).getAddress());
-        holder.mTextViewLikes.setText(dataset.get(position).getLikes());
-        holder.mCardIcon.setImageResource(dataset.get(position).getCardIcon());
+        holder.mTextViewHeader.setText(mCardsModelList.get(position).getHeader());
+        holder.mTextViewDate.setText(mCardsModelList.get(position).getDate());
+        holder.mTextViewDays.setText(mCardsModelList.get(position).getDays());
+        holder.mTextViewAddress.setText(mCardsModelList.get(position).getAddress());
+        holder.mTextViewLikes.setText(mCardsModelList.get(position).getLikes());
+        holder.mCardIcon.setImageResource(mCardsModelList.get(position).getCardIcon());
         holder.mCardView.setTag(position);
     }
 
     @Override
     public int getItemCount() {
-        return dataset.size();
+        return mCardsModelList.size();
     }
 }
