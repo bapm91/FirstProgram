@@ -8,18 +8,15 @@ import com.example.user.fragment.DoneFragment;
 import com.example.user.fragment.ExpectFragment;
 import com.example.user.fragment.InWorkingFragment;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class TabsFragmentAdapter extends FragmentPagerAdapter {
-    private Map<Integer, Fragment> tabs;
     private List<String> mList;
 
     public TabsFragmentAdapter(FragmentManager fragmentManager, List<String> mList) {
         super(fragmentManager);
         this.mList = mList;
-        initTabMap();
     }
 
     @Override
@@ -29,18 +26,19 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return tabs.get(position);
+        switch (position) {
+            case 0:
+                return InWorkingFragment.getInstance();
+            case 1:
+                return DoneFragment.getInstance();
+            case 2:
+                return ExpectFragment.getInstance();
+        }
+        return null;
     }
 
     @Override
     public int getCount() {
-        return tabs.size();
-    }
-
-    private void initTabMap() {
-        tabs = new HashMap<>();
-        tabs.put(0, InWorkingFragment.getInstance());
-        tabs.put(1, DoneFragment.getInstance());
-        tabs.put(2, ExpectFragment.getInstance());
+        return mList.size();
     }
 }
