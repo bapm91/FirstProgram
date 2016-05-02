@@ -62,17 +62,6 @@ public class ListViewAdapter extends BaseAdapter {
         viewHolder.mTextViewAddress.setText(cardsModel.getAddress());
         viewHolder.mTextViewLikes.setText(cardsModel.getLikes());
         viewHolder.mCardIcon.setImageResource(cardsModel.getCardIcon());
-
-        CardView cardView = (CardView) view.findViewById(R.id.card_view);
-
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), OnePageActivity.class);
-                intent.putExtra("position", position);
-                view.getContext().startActivity(intent);
-            }
-        });
         return view;
     }
 
