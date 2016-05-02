@@ -9,7 +9,6 @@ import com.example.user.fragment.ExpectFragment;
 import com.example.user.fragment.InWorkingFragment;
 
 import java.util.List;
-import java.util.Map;
 
 public class TabsFragmentAdapter extends FragmentPagerAdapter {
     private List<String> mList;
