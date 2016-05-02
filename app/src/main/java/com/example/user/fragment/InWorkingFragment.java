@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import com.example.user.adapter.RecyclerTabAdapter;
 import com.example.user.firstprogram.Application;
 import com.example.user.firstprogram.R;
-import com.melnykov.fab.FloatingActionButton;
 
 public class InWorkingFragment extends Fragment {
 
@@ -34,9 +33,6 @@ public class InWorkingFragment extends Fragment {
         recyclerView.setAdapter(new RecyclerTabAdapter(Application.getCardsModelList()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
-        fab.attachToRecyclerView(recyclerView);
 
         return view;
     }

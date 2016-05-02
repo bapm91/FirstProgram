@@ -1,14 +1,14 @@
 package com.example.user.cardsModel;
 
 public class CardsModel {
-    private String header;
-    private String address;
-    private String date;
-    private String days;
-    private String likes;
+    private int header;
+    private int address;
+    private int date;
+    private int days;
+    private int likes;
     private int cardIcon;
 
-    public CardsModel(String header, String address, String date, String days, String likes, int cardIcon) {
+    public CardsModel(int header, int address, int date, int days, int likes, int cardIcon) {
         this.header = header;
         this.address = address;
         this.date = date;
@@ -17,23 +17,23 @@ public class CardsModel {
         this.cardIcon = cardIcon;
     }
 
-    public String getHeader() {
+    public int getHeader() {
         return header;
     }
 
-    public String getAddress() {
+    public int getAddress() {
         return address;
     }
 
-    public String getDate() {
+    public int getDate() {
         return date;
     }
 
-    public String getDays() {
+    public int getDays() {
         return days;
     }
 
-    public String getLikes() {
+    public int getLikes() {
         return likes;
     }
 

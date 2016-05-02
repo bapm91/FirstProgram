@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import com.example.user.adapter.RecyclerTabAdapter;
 import com.example.user.firstprogram.Application;
 import com.example.user.firstprogram.R;
-import com.melnykov.fab.FloatingActionButton;
 
 public class DoneFragment extends Fragment {
 
@@ -31,9 +30,6 @@ public class DoneFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_done);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new RecyclerTabAdapter(Application.getCardsModelList()));
-
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab_done);
-        fab.attachToRecyclerView(recyclerView);
         return view;
     }
 }

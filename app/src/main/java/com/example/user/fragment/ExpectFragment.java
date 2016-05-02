@@ -11,7 +11,6 @@ import android.widget.ListView;
 import com.example.user.adapter.ListViewAdapter;
 import com.example.user.firstprogram.Application;
 import com.example.user.firstprogram.R;
-import com.melnykov.fab.FloatingActionButton;
 
 public class ExpectFragment extends Fragment {
 
@@ -28,8 +27,6 @@ public class ExpectFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_expect, container, false);
         ListView listView = (ListView) view.findViewById(R.id.expect_list_view);
         listView.setAdapter(new ListViewAdapter(Application.getCardsModelList()));
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab_expect);
-        fab.attachToListView(listView);
 
         return view;
     }
