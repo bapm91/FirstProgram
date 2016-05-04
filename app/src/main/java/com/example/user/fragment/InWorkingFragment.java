@@ -1,5 +1,6 @@
 package com.example.user.fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,12 +16,26 @@ import com.example.user.firstprogram.Application;
 import com.example.user.firstprogram.R;
 
 public class InWorkingFragment extends Fragment {
+    private OnScrollListener mCallback;
+
 
     public static InWorkingFragment getInstance() {
         Bundle args = new Bundle();
         InWorkingFragment fragment = new InWorkingFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            mCallback = (OnScrollListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
     }
 
     @Nullable
@@ -33,6 +48,18 @@ public class InWorkingFragment extends Fragment {
         recyclerView.setAdapter(new RecyclerTabAdapter(Application.getCardsModelList()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.getScrollState();
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == 0) {
+                    mCallback.onScroll(false);
+                } else {
+                    mCallback.onScroll(true);
+                }
+            }
+        });
 
         return view;
     }

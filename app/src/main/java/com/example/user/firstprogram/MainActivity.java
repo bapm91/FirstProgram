@@ -1,6 +1,7 @@
 package com.example.user.firstprogram;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -13,12 +14,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.user.adapter.TabsFragmentAdapter;
+import com.example.user.fragment.OnScrollListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, OnScrollListener {
+
+    private FloatingActionButton mFloatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         initTabs();
 
+        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+
         DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -38,8 +44,9 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        assert navigationView != null;
-        navigationView.setNavigationItemSelectedListener(this);
+        if (navigationView != null) {
+            navigationView.setNavigationItemSelectedListener(this);
+        }
     }
 
     private void initTabs() {
@@ -53,18 +60,20 @@ public class MainActivity extends AppCompatActivity
             viewPager.setAdapter(adapter);
         }
         TabLayout mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        assert mTabLayout != null;
-        mTabLayout.setupWithViewPager(viewPager);
+        if (mTabLayout != null) {
+            mTabLayout.setupWithViewPager(viewPager);
+        }
     }
 
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+        if (drawer != null) {
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                super.onBackPressed();
+            }
         }
     }
 
@@ -90,8 +99,18 @@ public class MainActivity extends AppCompatActivity
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        drawer.closeDrawer(GravityCompat.START);
+        if (drawer != null) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
         return true;
+    }
+
+    @Override
+    public void onScroll(boolean scroll) {
+        if (scroll) {
+            mFloatingActionButton.hide();
+        } else {
+            mFloatingActionButton.show();
+        }
     }
 }
