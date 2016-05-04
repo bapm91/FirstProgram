@@ -49,16 +49,12 @@ public class ExpectFragment extends Fragment {
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-                if (scrollState == 0) {
-                    mCallback.onScroll(false);
-                } else {
-                    mCallback.onScroll(true);
-                }
+                mCallback.onScroll(scrollState != 0);
             }
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
+                // Unused metod
             }
         });
 

@@ -49,11 +49,7 @@ public class DoneFragment extends Fragment {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                if (newState == 0) {
-                    mCallback.onScroll(false);
-                } else {
-                    mCallback.onScroll(true);
-                }
+                mCallback.onScroll(newState != 0);
             }
         });
         return view;
