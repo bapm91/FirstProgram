@@ -36,19 +36,18 @@ public class ListViewAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
-        View view = convertView;
-        if (view == null) {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout, parent, false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_layout, parent, false);
             viewHolder = new ViewHolder();
-            viewHolder.mTextViewHeader = (TextView) view.findViewById(R.id.mTitle);
-            viewHolder.mTextViewLikes = (TextView) view.findViewById(R.id.card_likes);
-            viewHolder.mTextViewDays = (TextView) view.findViewById(R.id.card_days);
-            viewHolder.mTextViewDate = (TextView) view.findViewById(R.id.card_date);
-            viewHolder.mTextViewAddress = (TextView) view.findViewById(R.id.card_street);
-            viewHolder.mCardIcon = (ImageView) view.findViewById(R.id.card_icon);
-            view.setTag(viewHolder);
+            viewHolder.mTextViewHeader = (TextView) convertView.findViewById(R.id.mTitle);
+            viewHolder.mTextViewLikes = (TextView) convertView.findViewById(R.id.card_likes);
+            viewHolder.mTextViewDays = (TextView) convertView.findViewById(R.id.card_days);
+            viewHolder.mTextViewDate = (TextView) convertView.findViewById(R.id.card_date);
+            viewHolder.mTextViewAddress = (TextView) convertView.findViewById(R.id.card_street);
+            viewHolder.mCardIcon = (ImageView) convertView.findViewById(R.id.card_icon);
+            convertView.setTag(viewHolder);
         } else {
-            viewHolder = (ViewHolder) view.getTag();
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
         CardsModel cardsModel = getCardModel(position);
@@ -59,7 +58,7 @@ public class ListViewAdapter extends BaseAdapter {
         viewHolder.mTextViewAddress.setText(cardsModel.getAddress());
         viewHolder.mTextViewLikes.setText(cardsModel.getLikes());
         viewHolder.mCardIcon.setImageResource(cardsModel.getCardIcon());
-        return view;
+        return convertView;
     }
 
     private CardsModel getCardModel(int position) {
