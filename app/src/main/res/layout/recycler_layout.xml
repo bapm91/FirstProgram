@@ -75,13 +75,13 @@
             <TextView
                 android:id="@+id/card_days"
                 android:layout_width="@dimen/card_days_width"
-                android:layout_height="@dimen/some_margin"
+                android:layout_height="@dimen/some_margin_more"
                 android:layout_below="@+id/card_street"
                 android:layout_marginLeft="@dimen/some_margin"
                 android:layout_marginStart="@dimen/card_days_margin_start"
                 android:layout_marginTop="@dimen/some_margin"
                 android:fontFamily="sans-serif-medium"
-                android:gravity="center_vertical"
+                android:gravity="top"
                 android:textColor="@color/blak_54"
                 android:textSize="@dimen/card_likes_text_size"
                 android:textStyle="bold"/>
